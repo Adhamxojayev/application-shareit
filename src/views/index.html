@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/user.css">
+    <title>Home</title>
+</head>
+<body>
+
+    <form action="/" method="POST" id="form">
+        <label for="file">upload you file</label>
+        <input type="file" required name="file" id="fileInput">
+        <input type="text" id="textInput" required placeholder="file name ... ">
+        <button type="submit">send file</button>
+    </form>
+
+    <ul>
+
+        <% for(let user of users) { %>
+            <% for(let file of files) { %>
+                <% if(user.userId == file.userId) { %>
+                    <li><span>username: </span><%= user.username%> <img src=<%= user.userimg %> ><span></span> <a href="" download=<%= file.filePath %>>download <span></span><%= file.fileName %> <span></span><span><%= new Date() %></span></a></li>
+                    <% } %>
+            <% } %>
+        <% } %>    
+
+    </ul>
+
+    <script>
+
+
+
+        form.onsubmit = (event) => {
+
+            let formData = new FormData()
+            formData.append('file', fileInput.files[0])
+            formData.append('fileName', textInput.value)
+
+            let response = fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            
+        }
+
+
+    </script>
+</body>
+</html>

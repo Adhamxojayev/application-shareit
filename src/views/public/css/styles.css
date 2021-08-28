@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    box-sizing: border-box;
+}
+
+form {
+    width: 400x;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    padding: 12px;
+    margin-top: 10px;
+    outline: none;
+}
+
+button {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: green;
+    background-color: lightblue;
+    border: none;
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin-top: 20px;
+}
+button:hover{
+    background-color: lightcyan;
+}
+
+a {
+    width: 100px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    color: green;
+    transition: 0.5s ease;
+}
+a:hover {
+    color: #fff;
+}
+
+p{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
